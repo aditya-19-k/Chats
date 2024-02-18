@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/gradient_background"
+    tools:context=".ChatActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_chat"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_chat"
+        android:id="@+id/recycler_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/sendMessageLayout"
+            android:layout_below="@id/toolbar_chat" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/sendMessageLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:outlineProvider="paddedBounds"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="text"
+            android:padding="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/messageEd"
+            android:hint="@string/hint_message_write"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageButton
+            android:id="@+id/sendMessage"
+            android:padding="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/send_image"
+            android:layout_width="wrap_content"
+            android:background="@color/transperent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>
